@@ -10,6 +10,8 @@ module com.usue.svetlyakov.coursework {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires atlantafx.base;
+    requires atlantafx.styles;
 
     opens com.usue.svetlyakov.coursework to javafx.fxml;
     exports com.usue.svetlyakov.coursework;

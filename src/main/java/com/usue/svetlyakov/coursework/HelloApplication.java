@@ -1,11 +1,8 @@
 package com.usue.svetlyakov.coursework;
 
-import com.almasb.fxgl.scene.SceneService;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import com.usue.svetlyakov.coursework.SceneTools;
 
 import java.io.IOException;
 
@@ -19,6 +16,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         Scene scene = SceneTools.LoadScene("hello-view.fxml", min_window_width, min_window_height);
         SetScene(stage, scene);
+        AppTheme.SetAppTheme(AppThemes.Dracula);
     }
 
     private void SetScene(Stage stage, Scene scene) {
