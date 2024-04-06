@@ -147,7 +147,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.usue.svetlyakov.coursework/com.usue.svetlyakov.coursework.HelloApplication
+                            <mainClass>com.usue.svetlyakov.coursework/com.usue.svetlyakov.coursework.App
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
