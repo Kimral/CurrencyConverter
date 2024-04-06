@@ -9,7 +9,7 @@ public class MainScene {
     Scene scene = null;
 
     public MainScene() throws Exception {
-        scene = SceneTools.LoadScene("hello-view.fxml", min_window_width, min_window_height);
+        scene = SceneTools.LoadScene("MainScene.fxml", min_window_width, min_window_height);
     }
 
     public Scene GetScene() {
