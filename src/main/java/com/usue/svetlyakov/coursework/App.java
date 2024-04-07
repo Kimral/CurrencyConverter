@@ -1,11 +1,10 @@
 package com.usue.svetlyakov.coursework;
 
 import com.usue.svetlyakov.coursework.scenes.MainScene;
+import com.usue.svetlyakov.coursework.tools.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class App extends Application {
     MainScene scene = null;

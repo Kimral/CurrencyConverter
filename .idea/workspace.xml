@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6abb69c6-9d6e-4625-b996-765430df5c6a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/controllers/MainSceneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/BottomScene.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/AppThemes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/SceneTools.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/usue/svetlyakov/coursework/BottomScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/AppTheme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/AppTheme.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/SceneTools.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/MainScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/MainScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/usue/svetlyakov/coursework/MainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/usue/svetlyakov/coursework/MainScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +28,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -40,21 +52,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AppRun.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "Application.Unnamed.executor": "Run",
-    "JUnit.HelloApplicationTest.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AppRun.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HelloApplicationTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -75,7 +87,7 @@
       <module name="CourseWork" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.usue.svetlyakov.coursework.*" />
+          <option name="PATTERN" value="com.usue.svetlyakov.coursework.tools.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,5 +119,16 @@
       <updated>1711871595128</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/SceneTools.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,4 +1,4 @@
-package com.usue.svetlyakov.coursework;
+package com.usue.svetlyakov.coursework.tools;
 
 import atlantafx.base.theme.PrimerDark;
 import atlantafx.base.theme.PrimerLight;
@@ -11,15 +11,6 @@ import atlantafx.base.theme.NordLight;
 import atlantafx.base.theme.Theme;
 import javafx.application.Application;
 
-enum AppThemes {
-    PrimerDark,
-    PrimerLight,
-    CupertinoDark,
-    CupertinoLight,
-    Dracula,
-    NordDark,
-    NordLight
-}
 public class AppTheme {
     static private Theme GetThemeById(AppThemes id) {
         switch (id) {

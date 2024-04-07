@@ -1,6 +1,6 @@
 package com.usue.svetlyakov.coursework.scenes;
 
-import com.usue.svetlyakov.coursework.SceneTools;
+import com.usue.svetlyakov.coursework.tools.SceneTools;
 import javafx.scene.Scene;
 
 public class MainScene {
@@ -9,7 +9,7 @@ public class MainScene {
     Scene scene = null;
 
     public MainScene() throws Exception {
-        scene = SceneTools.LoadScene("MainScene.fxml", min_window_width, min_window_height);
+        scene = SceneTools.LoadAsScene("MainScene.fxml", min_window_width, min_window_height);
     }
 
     public Scene GetScene() {
