@@ -13,6 +13,8 @@ module com.usue.svetlyakov.coursework {
     requires atlantafx.base;
     requires atlantafx.styles;
     requires java.desktop;
+    requires org.kordamp.ikonli.core;
+    requires org.kordamp.ikonli.feather;
 
     opens com.usue.svetlyakov.coursework to javafx.fxml;
     exports com.usue.svetlyakov.coursework;

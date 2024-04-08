@@ -31,7 +31,8 @@
             <version>5.10.1</version>
         </dependency>
         <dependency>
-            <groupId>org.openjfx</groupId>            <artifactId>javafx-controls</artifactId>
+            <artifactId>javafx-controls</artifactId>
+            <groupId>org.openjfx</groupId>
             <version>22-ea+11</version>
         </dependency>
         <dependency>
@@ -124,6 +125,11 @@
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.usue.svetlyakov</groupId>
+            <artifactId>CourseWork</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
