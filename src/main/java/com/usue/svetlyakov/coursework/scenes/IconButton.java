@@ -9,7 +9,7 @@ import org.kordamp.ikonli.feather.Feather;
 import org.kordamp.ikonli.javafx.FontIcon;
 
 public class IconButton {
-    Button button = null;
+    Button button;
     public IconButton(String style, Feather icon) {
         button = new Button(null, new FontIcon(icon));
         button.getStyleClass().addAll(style);

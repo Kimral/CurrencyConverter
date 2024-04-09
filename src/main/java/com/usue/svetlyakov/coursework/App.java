@@ -3,16 +3,18 @@ package com.usue.svetlyakov.coursework;
 import com.usue.svetlyakov.coursework.scenes.MainScene;
 import com.usue.svetlyakov.coursework.tools.*;
 import javafx.application.Application;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class App extends Application {
-    MainScene scene = null;
+    MainScene mainScene = null;
 
     @Override
     public void start(Stage stage) throws Exception {
-        scene = new MainScene();
-        SetScene(stage, scene.GetScene());
+        mainScene = new MainScene();
+        Scene scene = new Scene((Parent) mainScene.GetNode());
+        SetScene(stage, scene);
         AppTheme.SetAppTheme(AppThemes.Dracula);
     }
 

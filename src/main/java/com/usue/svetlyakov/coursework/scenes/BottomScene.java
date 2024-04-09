@@ -12,7 +12,7 @@ import org.kordamp.ikonli.feather.Feather;
 import org.kordamp.ikonli.javafx.FontIcon;
 
 public class BottomScene {
-    HBox hbox = null;
+    HBox hbox;
     public BottomScene() {
         hbox = new HBox();
         hbox.setPadding(new Insets(5, 5, 5, 5));

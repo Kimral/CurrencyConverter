@@ -20,6 +20,4 @@ module com.usue.svetlyakov.coursework {
     exports com.usue.svetlyakov.coursework;
     exports com.usue.svetlyakov.coursework.tools;
     opens com.usue.svetlyakov.coursework.tools to javafx.fxml;
-    exports com.usue.svetlyakov.coursework.controllers;
-    opens com.usue.svetlyakov.coursework.controllers to javafx.fxml;
 }
