@@ -15,7 +15,10 @@ public class BottomScene {
     HBox hbox;
     public BottomScene() {
         hbox = new HBox();
-        hbox.setPadding(new Insets(5, 5, 5, 5));
+        hbox.setPadding(new Insets(GlobalConstants.defaultPadding,
+                GlobalConstants.defaultPadding,
+                GlobalConstants.defaultPadding,
+                GlobalConstants.defaultPadding));
         hbox.setStyle("-fx-background-color: -color-neutral-muted;");
         IconButton button = new IconButton(Styles.BUTTON_ICON, Feather.MORE_HORIZONTAL);
         hbox.getChildren().add(button.GetNode());

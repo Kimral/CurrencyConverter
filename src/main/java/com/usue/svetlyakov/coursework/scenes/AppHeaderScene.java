@@ -11,22 +11,25 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 import org.kordamp.ikonli.feather.Feather;
 
-public class AppHeaderScene  {
+public class AppHeaderScene {
     HBox mainPane;
     Button idk;
     HBox emptySpace;
-    Button closeBtn;
+    WindowControlScene control;
 
     public AppHeaderScene() {
         InitMainPane();
         AddIDK();
         AddEmptySpace();
-        AddCloseButton();
+        AddControl();
     }
 
     private void InitMainPane() {
         mainPane = new HBox();
-        mainPane.setPadding(new Insets(5, 5, 5, 5));
+        mainPane.setPadding(new Insets(GlobalConstants.defaultPadding,
+                GlobalConstants.defaultPadding,
+                GlobalConstants.defaultPadding,
+                GlobalConstants.defaultPadding));
         mainPane.setStyle("-fx-background-color: -color-neutral-muted;");
     }
 
@@ -41,17 +44,15 @@ public class AppHeaderScene  {
         mainPane.getChildren().add(emptySpace);
     }
 
-    private void AddCloseButton() {
-        closeBtn = new Button("Close");
-        closeBtn.setOnAction(actionEvent -> {
-            Node node = (Node) actionEvent.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-            stage.close();
-        });
-        mainPane.getChildren().add(closeBtn);
+    private void AddControl() {
+        control = new WindowControlScene();
+        mainPane.getChildren().add(control.GetNode());
     }
 
-    public Scene GetScene() { return mainPane.getScene(); }
+    public Scene GetScene() {
+        return mainPane.getScene();
+    }
+
     public Node GetNode() {
         return mainPane;
     }
