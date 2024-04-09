@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class App extends Application {
     MainScene mainScene = null;
@@ -14,6 +15,7 @@ public class App extends Application {
     public void start(Stage stage) throws Exception {
         mainScene = new MainScene();
         Scene scene = new Scene((Parent) mainScene.GetNode());
+        stage.initStyle(StageStyle.UNDECORATED);
         SetScene(stage, scene);
         AppTheme.SetAppTheme(AppThemes.Dracula);
     }

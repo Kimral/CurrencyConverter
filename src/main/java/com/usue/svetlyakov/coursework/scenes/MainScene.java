@@ -13,10 +13,12 @@ public class MainScene {
     BorderPane pane;
     BottomScene bottom;
     CenterScene centre;
+    AppHeaderScene appHeader;
     public MainScene() {
         Init();
         InitBottom();
         InitCenter();
+        InitHeader();
     }
 
     private void Init() {
@@ -33,6 +35,11 @@ public class MainScene {
     private void InitCenter() {
         centre = new CenterScene();
         pane.setCenter(centre.GetNode());
+    }
+
+    private void InitHeader() {
+        appHeader = new AppHeaderScene();
+        pane.setTop(appHeader.GetNode());
     }
 
     public Scene GetScene() { return pane.getScene(); }

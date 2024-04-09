@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6abb69c6-9d6e-4625-b996-765430df5c6a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/CenterScene.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/AppHeaderScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/MainScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/MainScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +38,9 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2eRe0WShLQjeuCFasoOnwlACItW" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -121,11 +124,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/SceneTools.java</url>
           <line>23</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/App.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
