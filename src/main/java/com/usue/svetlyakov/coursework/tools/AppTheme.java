@@ -10,6 +10,9 @@ import atlantafx.base.theme.NordLight;
 
 import atlantafx.base.theme.Theme;
 import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 
 public class AppTheme {
     static private Theme GetThemeById(AppThemes id) {
@@ -40,5 +43,13 @@ public class AppTheme {
     }
     static public void SetAppTheme(AppThemes theme_id) {
         Application.setUserAgentStylesheet(GetThemeById(theme_id).getUserAgentStylesheet());
+        // Apply the theme to all existing stages
+        for (Window child : Stage.getWindows()) {
+            Scene scene = child.getScene();
+            if (scene != null) {
+                scene.getStylesheets().clear();
+                scene.getStylesheets().add(Application.getUserAgentStylesheet());
+            }
+        }
     }
 }

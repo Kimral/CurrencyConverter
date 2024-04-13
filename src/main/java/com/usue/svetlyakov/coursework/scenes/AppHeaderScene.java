@@ -4,16 +4,16 @@ import atlantafx.base.theme.Styles;
 import com.usue.svetlyakov.coursework.GlobalConstants;
 import com.usue.svetlyakov.coursework.widgets.AppLabel;
 import com.usue.svetlyakov.coursework.widgets.IconButton;
+import com.usue.svetlyakov.coursework.windows.SettingsWindow;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.effect.BoxBlur;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 import org.kordamp.ikonli.feather.Feather;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 public class AppHeaderScene {
     HBox mainPane;
@@ -31,9 +31,23 @@ public class AppHeaderScene {
         AddControl();
     }
 
+    private void DoWithBlur(Stage stage, Runnable function) {
+        stage.getScene().getRoot().setEffect(new BoxBlur(3, 3, 3));
+        function.run();
+        stage.getScene().getRoot().setEffect(null);
+    }
+
+
     private void InitSettingButton() {
         settingsButton = new IconButton(Styles.BUTTON_ICON, Feather.MORE_HORIZONTAL);
         innerPane.getChildren().add(settingsButton.GetNode());
+        settingsButton.SetAction(actionEvent -> {
+            Node node = (Node) actionEvent.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+            SettingsWindow settings = new SettingsWindow(stage);
+
+            DoWithBlur(stage, settings::ShowAndWait);
+        });
     }
 
     private void InitInnerPane() {
