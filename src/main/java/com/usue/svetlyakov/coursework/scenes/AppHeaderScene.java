@@ -1,15 +1,12 @@
 package com.usue.svetlyakov.coursework.scenes;
 
-import atlantafx.base.theme.Styles;
+import com.usue.svetlyakov.coursework.GlobalConstants;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
-import javafx.stage.Stage;
-import javafx.stage.Window;
-import org.kordamp.ikonli.feather.Feather;
 
 public class AppHeaderScene {
     HBox mainPane;

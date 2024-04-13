@@ -1,4 +1,4 @@
-package com.usue.svetlyakov.coursework.scenes;
+package com.usue.svetlyakov.coursework.widgets;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
