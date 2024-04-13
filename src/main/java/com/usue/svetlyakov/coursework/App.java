@@ -17,6 +17,7 @@ public class App extends Application {
         Scene scene = new Scene((Parent) mainScene.GetNode());
         stage.initStyle(StageStyle.UNDECORATED);
         SetScene(stage, scene);
+        ResizeHelper.addResizeListener(stage);
         AppTheme.SetAppTheme(AppThemes.Dracula);
     }
 
