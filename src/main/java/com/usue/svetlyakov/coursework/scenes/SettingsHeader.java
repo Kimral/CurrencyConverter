@@ -2,6 +2,7 @@ package com.usue.svetlyakov.coursework.scenes;
 
 import atlantafx.base.theme.Styles;
 import com.usue.svetlyakov.coursework.GlobalConstants;
+import com.usue.svetlyakov.coursework.tools.SceneTools;
 import com.usue.svetlyakov.coursework.widgets.AppLabel;
 import com.usue.svetlyakov.coursework.widgets.IconButton;
 import javafx.geometry.Insets;
@@ -42,8 +43,7 @@ public class SettingsHeader {
             yOffset = mouseEvent.getSceneY();
         });
         innerPane.setOnMouseDragged(mouseEvent -> {
-            Node node = (Node) mouseEvent.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
+            Stage stage = SceneTools.GetStageByEvent(mouseEvent);
 
             stage.setX(mouseEvent.getScreenX() - xOffset);
             stage.setY(mouseEvent.getScreenY() - yOffset);
@@ -64,8 +64,7 @@ public class SettingsHeader {
     private void InitCloseButton() {
         closeButton = new IconButton(Styles.BUTTON_ICON, Feather.X_OCTAGON);
         closeButton.SetAction(actionEvent -> {
-            Node node = (Node) actionEvent.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
+            Stage stage = SceneTools.GetStageByEvent(actionEvent);
             stage.close();
         });
         innerPane.getChildren().add(closeButton.GetNode());

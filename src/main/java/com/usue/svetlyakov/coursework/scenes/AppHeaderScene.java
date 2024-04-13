@@ -2,6 +2,7 @@ package com.usue.svetlyakov.coursework.scenes;
 
 import atlantafx.base.theme.Styles;
 import com.usue.svetlyakov.coursework.GlobalConstants;
+import com.usue.svetlyakov.coursework.tools.SceneTools;
 import com.usue.svetlyakov.coursework.widgets.AppLabel;
 import com.usue.svetlyakov.coursework.widgets.IconButton;
 import com.usue.svetlyakov.coursework.windows.SettingsWindow;
@@ -42,8 +43,7 @@ public class AppHeaderScene {
         settingsButton = new IconButton(Styles.BUTTON_ICON, Feather.MORE_HORIZONTAL);
         innerPane.getChildren().add(settingsButton.GetNode());
         settingsButton.SetAction(actionEvent -> {
-            Node node = (Node) actionEvent.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
+            Stage stage = SceneTools.GetStageByEvent(actionEvent);
             SettingsWindow settings = new SettingsWindow(stage);
 
             DoWithBlur(stage, settings::ShowAndWait);
@@ -57,8 +57,7 @@ public class AppHeaderScene {
             yOffset = mouseEvent.getSceneY();
         });
         innerPane.setOnMouseDragged(mouseEvent -> {
-            Node node = (Node) mouseEvent.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
+            Stage stage = SceneTools.GetStageByEvent(mouseEvent);
 
             stage.setX(mouseEvent.getScreenX() - xOffset);
             stage.setY(mouseEvent.getScreenY() - yOffset);
