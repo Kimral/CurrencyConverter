@@ -1,7 +1,9 @@
 package com.usue.svetlyakov.coursework.scenes;
 
+import atlantafx.base.theme.Styles;
 import com.usue.svetlyakov.coursework.GlobalConstants;
 import com.usue.svetlyakov.coursework.widgets.AppLabel;
+import com.usue.svetlyakov.coursework.widgets.IconButton;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -9,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
+import org.kordamp.ikonli.feather.Feather;
 
 public class AppHeaderScene {
     HBox mainPane;
@@ -16,14 +19,21 @@ public class AppHeaderScene {
     Button idk;
     AppLabel appLabel;
     WindowControlScene control;
+    IconButton settingsButton;
 
     double xOffset, yOffset;
     public AppHeaderScene() {
         InitMainPane();
         InitInnerPane();
+        InitSettingButton();
         AddIDK();
         AddEmptySpace();
         AddControl();
+    }
+
+    private void InitSettingButton() {
+        settingsButton = new IconButton(Styles.BUTTON_ICON, Feather.MORE_HORIZONTAL);
+        innerPane.getChildren().add(settingsButton.GetNode());
     }
 
     private void InitInnerPane() {

@@ -8,12 +8,10 @@ public class MainScene {
     private static final double min_window_width = 650;
     private static final double min_window_height = 450;
     BorderPane pane;
-    BottomScene bottom;
     CenterScene centre;
     AppHeaderScene appHeader;
     public MainScene() {
         Init();
-        InitBottom();
         InitCenter();
         InitHeader();
     }
@@ -22,11 +20,6 @@ public class MainScene {
         pane = new BorderPane();
         pane.setMinHeight(min_window_height);
         pane.setMinWidth(min_window_width);
-    }
-
-    private void InitBottom() {
-        bottom = new BottomScene();
-        pane.setBottom(bottom.GetNode());
     }
 
     private void InitCenter() {
