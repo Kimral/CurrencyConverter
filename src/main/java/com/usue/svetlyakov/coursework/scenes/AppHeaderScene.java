@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 
 public class AppHeaderScene {
     HBox mainPane;
+    HBox innerPane;
     Button idk;
     AppLabel appLabel;
     WindowControlScene control;
@@ -22,46 +23,53 @@ public class AppHeaderScene {
     double xOffset, yOffset;
     public AppHeaderScene() {
         InitMainPane();
+        InitInnerPane();
         AddIDK();
         AddEmptySpace();
         AddControl();
     }
 
-    private void InitMainPane() {
-        mainPane = new HBox();
-        mainPane.setOnMousePressed(mouseEvent -> {
+    private void InitInnerPane() {
+        innerPane = new HBox();
+        innerPane.setOnMousePressed(mouseEvent -> {
             xOffset = mouseEvent.getSceneX();
             yOffset = mouseEvent.getSceneY();
         });
-        mainPane.setOnMouseDragged(mouseEvent -> {
+        innerPane.setOnMouseDragged(mouseEvent -> {
             Node node = (Node) mouseEvent.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
 
             stage.setX(mouseEvent.getScreenX() - xOffset);
             stage.setY(mouseEvent.getScreenY() - yOffset);
         });
-        mainPane.setSpacing(GlobalConstants.defaultSpacing * 2);
+        innerPane.setSpacing(GlobalConstants.defaultSpacing * 2);
+        HBox.setHgrow(innerPane, Priority.ALWAYS);
+        mainPane.getChildren().add(innerPane);
+    }
+
+    private void InitMainPane() {
+        mainPane = new HBox();
+        mainPane.setStyle("-fx-background-color: -color-neutral-muted;");
         mainPane.setPadding(new Insets(GlobalConstants.defaultPadding,
                 GlobalConstants.defaultPadding,
                 GlobalConstants.defaultPadding,
                 GlobalConstants.defaultPadding));
-        mainPane.setStyle("-fx-background-color: -color-neutral-muted;");
     }
 
     private void AddIDK() {
         idk = new Button("Logo here");
-        mainPane.getChildren().add(idk);
+        innerPane.getChildren().add(idk);
     }
 
     private void AddEmptySpace() {
         appLabel = new AppLabel("Конвертер валют");
+        innerPane.getChildren().add(appLabel.GetNode());
         HBox.setHgrow(appLabel.GetNode(), Priority.ALWAYS);
-        mainPane.getChildren().add(appLabel.GetNode());
     }
 
     private void AddControl() {
         control = new WindowControlScene();
-        mainPane.getChildren().add(control.GetNode());
+        innerPane.getChildren().add(control.GetNode());
     }
 
     public Scene GetScene() {
