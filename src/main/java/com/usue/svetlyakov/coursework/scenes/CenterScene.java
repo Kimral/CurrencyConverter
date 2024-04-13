@@ -1,5 +1,6 @@
 package com.usue.svetlyakov.coursework.scenes;
 
+import atlantafx.base.theme.Styles;
 import javafx.geometry.Side;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -10,6 +11,7 @@ public class CenterScene {
     TabPane tabPane;
     public CenterScene() {
         tabPane = new TabPane();
+        tabPane.getStyleClass().add(Styles.TABS_CLASSIC);
         tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
         tabPane.setSide(Side.LEFT);
         tabPane.getTabs().add(new Tab("Инструменты"));

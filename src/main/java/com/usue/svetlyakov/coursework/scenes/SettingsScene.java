@@ -14,7 +14,6 @@ public class SettingsScene {
 
     private void Init() {
         borderPane = new BorderPane();
-        borderPane.setStyle("-fx-background-color: -color-neutral-emphasis;");
     }
 
     private void InitTop() {

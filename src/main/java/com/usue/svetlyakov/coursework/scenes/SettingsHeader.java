@@ -30,6 +30,7 @@ public class SettingsHeader {
 
     private void InitMainPane() {
         mainPane = new HBox();
+        mainPane.setStyle("-fx-background-color: -color-neutral-muted;");
         mainPane.setPadding(new Insets(GlobalConstants.defaultPadding,
                 GlobalConstants.defaultPadding,
                 GlobalConstants.defaultPadding,
