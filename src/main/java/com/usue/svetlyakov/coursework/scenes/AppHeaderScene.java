@@ -5,18 +5,19 @@ import com.usue.svetlyakov.coursework.GlobalConstants;
 import com.usue.svetlyakov.coursework.widgets.AppLabel;
 import com.usue.svetlyakov.coursework.widgets.IconButton;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 import org.kordamp.ikonli.feather.Feather;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class AppHeaderScene {
     HBox mainPane;
     HBox innerPane;
-    Button idk;
     AppLabel appLabel;
     WindowControlScene control;
     IconButton settingsButton;
@@ -26,7 +27,6 @@ public class AppHeaderScene {
         InitMainPane();
         InitInnerPane();
         InitSettingButton();
-        AddIDK();
         AddEmptySpace();
         AddControl();
     }
@@ -50,6 +50,7 @@ public class AppHeaderScene {
             stage.setY(mouseEvent.getScreenY() - yOffset);
         });
         innerPane.setSpacing(GlobalConstants.defaultSpacing * 2);
+        innerPane.setAlignment(Pos.CENTER_LEFT);
         HBox.setHgrow(innerPane, Priority.ALWAYS);
         mainPane.getChildren().add(innerPane);
     }
@@ -61,11 +62,6 @@ public class AppHeaderScene {
                 GlobalConstants.defaultPadding,
                 GlobalConstants.defaultPadding,
                 GlobalConstants.defaultPadding));
-    }
-
-    private void AddIDK() {
-        idk = new Button("Logo here");
-        innerPane.getChildren().add(idk);
     }
 
     private void AddEmptySpace() {
