@@ -1,16 +1,13 @@
 package com.usue.svetlyakov.coursework.scenes;
 
-import atlantafx.base.theme.Styles;
 import com.usue.svetlyakov.coursework.GlobalConstants;
 import com.usue.svetlyakov.coursework.widgets.AppLabel;
-import eu.hansolo.tilesfx.Test;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class AppHeaderScene {

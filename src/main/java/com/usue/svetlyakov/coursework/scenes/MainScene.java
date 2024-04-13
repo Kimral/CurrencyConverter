@@ -1,11 +1,8 @@
 package com.usue.svetlyakov.coursework.scenes;
 
-import com.usue.svetlyakov.coursework.tools.SceneTools;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
-import com.usue.svetlyakov.coursework.scenes.BottomScene;
 
 public class MainScene {
     private static final double min_window_width = 650;
