@@ -1,19 +1,25 @@
 package com.usue.svetlyakov.coursework.scenes;
 
+import atlantafx.base.theme.Styles;
 import com.usue.svetlyakov.coursework.GlobalConstants;
+import com.usue.svetlyakov.coursework.widgets.AppLabel;
+import eu.hansolo.tilesfx.Test;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class AppHeaderScene {
     HBox mainPane;
     Button idk;
-    HBox emptySpace;
+    AppLabel appLabel;
     WindowControlScene control;
 
+    double xOffset, yOffset;
     public AppHeaderScene() {
         InitMainPane();
         AddIDK();
@@ -23,6 +29,18 @@ public class AppHeaderScene {
 
     private void InitMainPane() {
         mainPane = new HBox();
+        mainPane.setOnMousePressed(mouseEvent -> {
+            xOffset = mouseEvent.getSceneX();
+            yOffset = mouseEvent.getSceneY();
+        });
+        mainPane.setOnMouseDragged(mouseEvent -> {
+            Node node = (Node) mouseEvent.getSource();
+            Stage stage = (Stage) node.getScene().getWindow();
+
+            stage.setX(mouseEvent.getScreenX() - xOffset);
+            stage.setY(mouseEvent.getScreenY() - yOffset);
+        });
+        mainPane.setSpacing(GlobalConstants.defaultSpacing * 2);
         mainPane.setPadding(new Insets(GlobalConstants.defaultPadding,
                 GlobalConstants.defaultPadding,
                 GlobalConstants.defaultPadding,
@@ -36,9 +54,9 @@ public class AppHeaderScene {
     }
 
     private void AddEmptySpace() {
-        emptySpace = new HBox();
-        HBox.setHgrow(emptySpace, Priority.ALWAYS);
-        mainPane.getChildren().add(emptySpace);
+        appLabel = new AppLabel("Конвертер валют");
+        HBox.setHgrow(appLabel.GetNode(), Priority.ALWAYS);
+        mainPane.getChildren().add(appLabel.GetNode());
     }
 
     private void AddControl() {
@@ -49,7 +67,6 @@ public class AppHeaderScene {
     public Scene GetScene() {
         return mainPane.getScene();
     }
-
     public Node GetNode() {
         return mainPane;
     }

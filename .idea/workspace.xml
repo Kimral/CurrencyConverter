@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6abb69c6-9d6e-4625-b996-765430df5c6a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/widgets/AppLabel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/AppHeaderScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/AppHeaderScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/BottomScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/BottomScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/GlobalConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/GlobalConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/IconButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/widgets/IconButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/WindowControlScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/WindowControlScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
