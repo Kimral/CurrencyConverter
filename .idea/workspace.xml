@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6abb69c6-9d6e-4625-b996-765430df5c6a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/SettingsCentreScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/SettingsScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/SettingsScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/AppTheme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/AppTheme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/AppThemes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/AppThemes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/SettingsCentreScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/SettingsCentreScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

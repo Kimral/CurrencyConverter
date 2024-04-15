@@ -41,11 +41,10 @@ public class SettingsCentreScene {
         innerBox.setAlignment(Pos.CENTER);
         HBox.setHgrow(innerBox, Priority.ALWAYS);
         innerBox.setStyle("-fx-background-color: -color-bg-inset;");
-
-        InitComboBox();
-        InitLabel();
-
         mainBox.getChildren().add(innerBox);
+
+        InitLabel();
+        InitComboBox();
     }
 
     private void InitComboBox() {
@@ -63,7 +62,6 @@ public class SettingsCentreScene {
         label = new Text("Тема приложения");
         label.getStyleClass().add(Styles.TITLE_4);
         innerBox.getChildren().add(label);
-
     }
 
     public Scene GetScene() {
