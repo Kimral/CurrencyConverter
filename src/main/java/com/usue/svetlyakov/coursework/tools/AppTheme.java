@@ -15,6 +15,19 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 public class AppTheme {
+    static public AppThemes GetThemeByName(String name) {
+        return switch (name) {
+            case "Dracula" -> AppThemes.Dracula;
+            case "PrimerDark" -> AppThemes.PrimerDark;
+            case "PrimerLight" -> AppThemes.PrimerLight;
+            case "CupertinoDark" -> AppThemes.CupertinoDark;
+            case "CupertinoLight" -> AppThemes.CupertinoLight;
+            case "NordDark" -> AppThemes.NordDark;
+            case "NordLight" -> AppThemes.NordLight;
+            default -> AppThemes.Dracula;
+        };
+    }
+
     static private Theme GetThemeById(AppThemes id) {
         switch (id) {
             case PrimerDark -> {

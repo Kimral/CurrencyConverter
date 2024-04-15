@@ -7,9 +7,16 @@ import javafx.scene.layout.BorderPane;
 public class SettingsScene {
     BorderPane borderPane;
     SettingsHeader settingsHeader;
+    SettingsCentreScene mainScene;
     public SettingsScene() {
         Init();
         InitTop();
+        IninMainScene();
+    }
+
+    private void IninMainScene( ) {
+        mainScene = new SettingsCentreScene();
+        borderPane.setCenter(mainScene.GetNode());
     }
 
     private void Init() {
