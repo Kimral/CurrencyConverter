@@ -15,6 +15,7 @@ module com.usue.svetlyakov.coursework {
     requires java.desktop;
     requires org.kordamp.ikonli.core;
     requires org.kordamp.ikonli.feather;
+    requires java.net.http;
 
     opens com.usue.svetlyakov.coursework to javafx.fxml;
     exports com.usue.svetlyakov.coursework;
