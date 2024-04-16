@@ -1,15 +1,12 @@
 package com.usue.svetlyakov.coursework.windows;
 
-import com.usue.svetlyakov.coursework.scenes.SettingsScene;
+import com.usue.svetlyakov.coursework.scenes.settings.SettingsScene;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.stage.WindowEvent;
 
 public class SettingsWindow {
     private static final double window_width = 400;

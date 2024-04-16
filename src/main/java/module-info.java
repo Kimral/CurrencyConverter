@@ -21,4 +21,8 @@ module com.usue.svetlyakov.coursework {
     exports com.usue.svetlyakov.coursework;
     exports com.usue.svetlyakov.coursework.tools;
     opens com.usue.svetlyakov.coursework.tools to javafx.fxml;
+    exports com.usue.svetlyakov.coursework.tools.theme;
+    opens com.usue.svetlyakov.coursework.tools.theme to javafx.fxml;
+    exports com.usue.svetlyakov.coursework.tools.currency;
+    opens com.usue.svetlyakov.coursework.tools.currency to javafx.fxml;
 }

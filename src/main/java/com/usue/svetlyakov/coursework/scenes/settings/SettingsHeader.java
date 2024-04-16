@@ -1,4 +1,4 @@
-package com.usue.svetlyakov.coursework.scenes;
+package com.usue.svetlyakov.coursework.scenes.settings;
 
 import atlantafx.base.theme.Styles;
 import com.usue.svetlyakov.coursework.GlobalConstants;

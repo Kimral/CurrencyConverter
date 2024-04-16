@@ -2,6 +2,8 @@ package com.usue.svetlyakov.coursework;
 
 import com.usue.svetlyakov.coursework.scenes.MainScene;
 import com.usue.svetlyakov.coursework.tools.*;
+import com.usue.svetlyakov.coursework.tools.theme.AppTheme;
+import com.usue.svetlyakov.coursework.tools.theme.AppThemes;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

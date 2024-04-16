@@ -1,4 +1,4 @@
-package com.usue.svetlyakov.coursework.tools;
+package com.usue.svetlyakov.coursework.tools.currency;
 
 public class CurrencyData {
     public String id_;

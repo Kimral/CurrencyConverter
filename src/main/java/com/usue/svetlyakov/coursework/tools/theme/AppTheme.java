@@ -1,4 +1,4 @@
-package com.usue.svetlyakov.coursework.tools;
+package com.usue.svetlyakov.coursework.tools.theme;
 
 import atlantafx.base.theme.PrimerDark;
 import atlantafx.base.theme.PrimerLight;

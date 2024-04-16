@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6abb69c6-9d6e-4625-b996-765430df5c6a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/ToolsTabScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/CurrencyData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/CurrencyFetcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/calculator/CalculatorsScene.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/calculator/OfflineCalculatorScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/CenterScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/CenterScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/SettingsCentreScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/settings/SettingsCentreScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/SettingsHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/settings/SettingsHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/SettingsScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/settings/SettingsScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/AppTheme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/theme/AppTheme.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/AppThemes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/theme/AppThemes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/CurrencyData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/currency/CurrencyData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/CurrencyFetcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/currency/CurrencyFetcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/windows/SettingsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/windows/SettingsWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +57,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.AppRun.executor": "Debug",
+    "Application.AppRun.executor": "Run",
     "Application.HelloApplication.executor": "Run",
     "Application.Unnamed.executor": "Run",
     "JUnit.HelloApplicationTest.executor": "Run",
@@ -91,7 +99,7 @@
       <module name="CourseWork" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.usue.svetlyakov.coursework.tools.*" />
+          <option name="PATTERN" value="com.usue.svetlyakov.coursework.tools.theme.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,5 +131,21 @@
       <updated>1711871595128</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/calculator/OfflineCalculatorScene.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/calculator/OfflineCalculatorScene.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

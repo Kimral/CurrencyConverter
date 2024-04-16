@@ -1,4 +1,4 @@
-package com.usue.svetlyakov.coursework.tools;
+package com.usue.svetlyakov.coursework.tools.currency;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

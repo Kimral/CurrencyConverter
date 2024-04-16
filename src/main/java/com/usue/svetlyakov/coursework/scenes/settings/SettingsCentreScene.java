@@ -1,9 +1,8 @@
-package com.usue.svetlyakov.coursework.scenes;
+package com.usue.svetlyakov.coursework.scenes.settings;
 
 import atlantafx.base.theme.Styles;
 import com.usue.svetlyakov.coursework.GlobalConstants;
-import com.usue.svetlyakov.coursework.tools.AppTheme;
-import com.usue.svetlyakov.coursework.tools.AppThemes;
+import com.usue.svetlyakov.coursework.tools.theme.AppTheme;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -13,7 +12,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 @SuppressWarnings("ALL")

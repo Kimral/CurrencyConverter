@@ -1,4 +1,4 @@
-package com.usue.svetlyakov.coursework.scenes;
+package com.usue.svetlyakov.coursework.scenes.settings;
 
 import javafx.scene.Node;
 import javafx.scene.Scene;
