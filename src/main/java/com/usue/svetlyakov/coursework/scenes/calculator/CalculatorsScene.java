@@ -10,10 +10,11 @@ import javafx.scene.control.TabPane;
 public class CalculatorsScene {
     TabPane tabPane;
     OfflineCalculatorScene offline;
+    OnlineCalculatorScene online;
     public CalculatorsScene() {
         Init();
+        InitOnline();
         InitOffline();
-        //InitOnline();
     }
 
     private void Init() {
@@ -25,12 +26,13 @@ public class CalculatorsScene {
 
     private void InitOffline() {
         offline = new OfflineCalculatorScene();
-        Tab tab = new Tab("Offline", offline.GetNode());
+        Tab tab = new Tab("Простой конвертер", offline.GetNode());
         tabPane.getTabs().add(tab);
     }
 
     private void InitOnline() {
-        tabPane.getTabs().add(new Tab("Online"));
+        online = new OnlineCalculatorScene();
+        tabPane.getTabs().add(new Tab("Онлайн конвертер", online.GetNode()));
     }
 
     public Scene GetScene() {

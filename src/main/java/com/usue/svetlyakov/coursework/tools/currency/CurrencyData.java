@@ -8,6 +8,7 @@ public class CurrencyData {
     public String name_;
     public double value_;
     public double valueRate_;
+
     public CurrencyData(String id, int numCode, String charCode, int nominal, String name, double value, double valueRate) {
         id_ = id;
         numCode_ = numCode;

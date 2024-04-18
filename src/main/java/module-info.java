@@ -16,6 +16,7 @@ module com.usue.svetlyakov.coursework {
     requires org.kordamp.ikonli.core;
     requires org.kordamp.ikonli.feather;
     requires java.net.http;
+    requires java.sql;
 
     opens com.usue.svetlyakov.coursework to javafx.fxml;
     exports com.usue.svetlyakov.coursework;
