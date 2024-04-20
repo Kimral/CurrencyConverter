@@ -26,8 +26,8 @@ import javafx.util.converter.DoubleStringConverter;
 import java.util.*;
 
 public class OnlineCalculatorScene {
-    VBox vbox;
-    HBox paramsHbox;
+    HBox hbox;
+    VBox paramsVbox;
     VBox currencyParamsHBox;
 
     TableView<CurrencyRow> table;
@@ -44,27 +44,29 @@ public class OnlineCalculatorScene {
     }
 
     private void Init() {
-        vbox = new VBox();
-        vbox.setPadding(new Insets(GlobalConstants.defaultPadding * 2));
-        vbox.setSpacing(GlobalConstants.defaultSpacing * 2);
-        vbox.setAlignment(Pos.TOP_CENTER);
+        hbox = new HBox();
+        hbox.setPadding(new Insets(GlobalConstants.defaultPadding * 2));
+        hbox.setSpacing(GlobalConstants.defaultSpacing * 2);
+        hbox.setAlignment(Pos.TOP_CENTER);
     }
 
     private void InitParams() {
-        paramsHbox = new HBox();
-        paramsHbox.setAlignment(Pos.CENTER);
-        paramsHbox.setSpacing(GlobalConstants.defaultSpacing * 2);
+        paramsVbox = new VBox();
+        paramsVbox.setAlignment(Pos.TOP_CENTER);
+        paramsVbox.setMaxWidth(250);
+        paramsVbox.setMinWidth(250);
+        paramsVbox.setSpacing(GlobalConstants.defaultSpacing * 2);
 
         InitCalendar();
         InitCurrencyParams();
 
-        vbox.getChildren().add(paramsHbox);
+        hbox.getChildren().add(paramsVbox);
     }
 
     private void InitTable() {
         table = CurrenciesTable.CreateTable();
-        VBox.setVgrow(table, Priority.ALWAYS);
-        vbox.getChildren().add(table);
+        HBox.setHgrow(table, Priority.ALWAYS);
+        hbox.getChildren().add(table);
     }
 
     private void InitCurrencyParams() {
@@ -76,7 +78,7 @@ public class OnlineCalculatorScene {
         InitCurrencyCount();
         InitCommission();
 
-        paramsHbox.getChildren().add(currencyParamsHBox);
+        paramsVbox.getChildren().add(currencyParamsHBox);
     }
 
     private void InitCurrencyWidgets() {
@@ -104,7 +106,6 @@ public class OnlineCalculatorScene {
         Collections.sort(currencyTitles);
         currency = new ComboBox<>();
         currency.getItems().addAll(currencyTitles);
-        currency.setMaxWidth(200);
         currency.setOnAction(_ -> DataChanged());
         HBox.setHgrow(currency, Priority.ALWAYS);
     }
@@ -150,14 +151,14 @@ public class OnlineCalculatorScene {
     private void InitCalendar() {
         date = MyCalendar.CreateCalendar(CompareTime.OnlyPast);
         date.valueProperty().addListener((_, _, _) -> DataChanged());
-        paramsHbox.getChildren().add(date);
+        paramsVbox.getChildren().add(date);
     }
 
     public Scene GetScene() {
-        return vbox.getScene();
+        return hbox.getScene();
     }
     public Node GetNode() {
-        return vbox;
+        return hbox;
     }
 
     private void DataChanged() {

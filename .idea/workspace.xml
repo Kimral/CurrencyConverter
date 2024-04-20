@@ -10,10 +10,7 @@
     <list default="true" id="6abb69c6-9d6e-4625-b996-765430df5c6a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/calculator/OnlineCalculatorScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/scenes/calculator/OnlineCalculatorScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/currency/CurrencyData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/currency/CurrencyData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/currency/CurrencyFetcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/tools/currency/CurrencyFetcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/widgets/CurrenciesTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/widgets/CurrenciesTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/widgets/CurrencyRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usue/svetlyakov/coursework/widgets/CurrencyRow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +49,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.AppRun.executor": "Debug",
+    "Application.AppRun.executor": "Run",
     "Application.HelloApplication.executor": "Run",
     "Application.Unnamed.executor": "Run",
     "JUnit.HelloApplicationTest.executor": "Run",

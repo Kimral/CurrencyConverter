@@ -35,7 +35,6 @@ public class CurrenciesTable {
         );
 
         var col6 = new TableColumn<CurrencyRow, String>("Доступно (лотов)");
-
         col6.setCellValueFactory(
             c -> {
                 double value = Math.floor(c.getValue().availableToBuy_);
