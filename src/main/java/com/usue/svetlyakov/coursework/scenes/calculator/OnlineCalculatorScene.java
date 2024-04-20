@@ -98,16 +98,11 @@ public class OnlineCalculatorScene {
     }
 
     private void InitCurrency() {
-        Map<String, CurrencyData> currenciesData = CurrencyFetcher.GetForDate(date.getValue());
-        Vector<String> currencyTitles = new Vector<>();
-        for(Map.Entry<String, CurrencyData> data : currenciesData.entrySet()) {
-            currencyTitles.add(data.getValue().charCode_ +" | " + data.getValue().name_);
-        }
-        Collections.sort(currencyTitles);
         currency = new ComboBox<>();
-        currency.getItems().addAll(currencyTitles);
         currency.setOnAction(_ -> DataChanged());
         HBox.setHgrow(currency, Priority.ALWAYS);
+
+        InitCurrencyList();
     }
 
     private void InitCommission() {
@@ -154,7 +149,10 @@ public class OnlineCalculatorScene {
 
     private void InitCalendar() {
         date = MyCalendar.CreateCalendar(CompareTime.OnlyPast);
-        date.valueProperty().addListener((_, _, _) -> DataChanged());
+        date.valueProperty().addListener((_, _, _) -> {
+            InitCurrencyList();
+            DataChanged();
+        });
         paramsVbox.getChildren().add(date);
     }
 
@@ -163,6 +161,27 @@ public class OnlineCalculatorScene {
     }
     public Node GetNode() {
         return hbox;
+    }
+
+    private void InitCurrencyList() {
+        String oldValue = currency.getValue();
+        currency.getItems().clear();
+        Map<String, CurrencyData> currenciesData = CurrencyFetcher.GetForDate(date.getValue());
+        Vector<String> currencyTitles = new Vector<>();
+        for(Map.Entry<String, CurrencyData> data : currenciesData.entrySet()) {
+            currencyTitles.add(data.getValue().charCode_ +" | " + data.getValue().name_);
+        }
+        Collections.sort(currencyTitles);
+        currency.getItems().addAll(currencyTitles);
+
+        if(!(oldValue == null)) {
+            if(currencyTitles.contains(oldValue)) {
+                currency.setValue(oldValue);
+            }
+            else {
+                table.getItems().clear();
+            }
+        }
     }
 
     private void DataChanged() {
