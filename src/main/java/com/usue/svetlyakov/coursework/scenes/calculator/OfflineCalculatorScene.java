@@ -8,9 +8,11 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.util.converter.DoubleStringConverter;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -118,6 +120,8 @@ public class OfflineCalculatorScene {
         countHbox.getChildren().add(label);
 
         count = new TextField();
+        TextFormatter<Double> formatter = new TextFormatter<>(new DoubleStringConverter(), 0.0);
+        count.setTextFormatter(formatter);
         count.setAlignment(Pos.CENTER);
         count.textProperty().addListener(_ -> Recount());
         countHbox.getChildren().add(count);
@@ -134,6 +138,8 @@ public class OfflineCalculatorScene {
         rateHBox.getChildren().add(label);
 
         rate = new TextField();
+        TextFormatter<Double> formatter = new TextFormatter<>(new DoubleStringConverter(), 0.0);
+        rate.setTextFormatter(formatter);
         rate.setAlignment(Pos.CENTER);
         rate.textProperty().addListener(_ -> Recount());
         rateHBox.getChildren().add(rate);
@@ -150,6 +156,8 @@ public class OfflineCalculatorScene {
         commissionHBox.getChildren().add(label);
 
         commission = new TextField();
+        TextFormatter<Double> formatter = new TextFormatter<>(new DoubleStringConverter(), 0.0);
+        commission.setTextFormatter(formatter);
         commission.setAlignment(Pos.CENTER);
         commission.textProperty().addListener(_ -> Recount());
         commissionHBox.getChildren().add(commission);
@@ -175,6 +183,8 @@ public class OfflineCalculatorScene {
         resultHBox.getChildren().add(label);
 
         result = new TextField();
+        TextFormatter<Double> formatter = new TextFormatter<>(new DoubleStringConverter(), 0.0);
+        result.setTextFormatter(formatter);
         result.setEditable(false);
         result.setAlignment(Pos.CENTER);
         resultHBox.getChildren().add(result);
