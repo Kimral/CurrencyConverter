@@ -9,8 +9,7 @@ public class CurrencyData {
     public double value_;
     public double valueRate_;
 
-    public CurrencyData(String id, int numCode, String charCode, int nominal, String name, double value, double valueRate) {
-        id_ = id;
+    public CurrencyData(int numCode, String charCode, int nominal, String name, double value, double valueRate) {
         numCode_ = numCode;
         charCode_ = charCode;
         nominal_ = nominal;

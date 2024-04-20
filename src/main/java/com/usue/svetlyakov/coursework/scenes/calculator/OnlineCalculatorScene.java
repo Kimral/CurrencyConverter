@@ -3,32 +3,38 @@ package com.usue.svetlyakov.coursework.scenes.calculator;
 import atlantafx.base.controls.Calendar;
 import atlantafx.base.theme.Styles;
 import com.usue.svetlyakov.coursework.GlobalConstants;
+import com.usue.svetlyakov.coursework.tools.currency.CurrencyData;
+import com.usue.svetlyakov.coursework.tools.currency.CurrencyFetcher;
 import com.usue.svetlyakov.coursework.widgets.CompareTime;
 import com.usue.svetlyakov.coursework.widgets.CurrenciesTable;
 import com.usue.svetlyakov.coursework.widgets.CurrencyRow;
 import com.usue.svetlyakov.coursework.widgets.MyCalendar;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.util.converter.DoubleStringConverter;
+
+import java.util.*;
 
 public class OnlineCalculatorScene {
     VBox vbox;
     HBox paramsHbox;
     VBox currencyParamsHBox;
 
+    TableView<CurrencyRow> table;
+
     ComboBox<String> currency;
     TextField currencyCount;
-    TextField commission;
+    TextField commissionCount;
     Calendar date;
 
     public OnlineCalculatorScene() {
@@ -56,35 +62,32 @@ public class OnlineCalculatorScene {
     }
 
     private void InitTable() {
-        TableView<CurrencyRow> table = CurrenciesTable.CreateTable();
+        table = CurrenciesTable.CreateTable();
         VBox.setVgrow(table, Priority.ALWAYS);
         vbox.getChildren().add(table);
     }
 
     private void InitCurrencyParams() {
         currencyParamsHBox = new VBox();
-        currencyParamsHBox.setAlignment(Pos.CENTER_RIGHT);
+        currencyParamsHBox.setAlignment(Pos.CENTER_LEFT);
         currencyParamsHBox.setSpacing(GlobalConstants.defaultSpacing * 2);
 
-        InitCurrency();
+        InitCurrencyWidgets();
         InitCurrencyCount();
         InitCommission();
 
         paramsHbox.getChildren().add(currencyParamsHBox);
     }
 
-    private void InitCurrency() {
+    private void InitCurrencyWidgets() {
         HBox localHBox = new HBox();
-        localHBox.setAlignment(Pos.CENTER_RIGHT);
+        localHBox.setAlignment(Pos.CENTER_LEFT);
         localHBox.setSpacing(GlobalConstants.defaultSpacing * 2);
 
         Text label = new Text("Валюта");
         label.getStyleClass().add(Styles.TITLE_4);
 
-        currency = new ComboBox<String>();
-        currency.getItems().add("Test");
-        currency.setMaxWidth(200);
-        HBox.setHgrow(currency, Priority.ALWAYS);
+        InitCurrency();
 
         localHBox.getChildren().add(label);
         localHBox.getChildren().add(currency);
@@ -92,17 +95,35 @@ public class OnlineCalculatorScene {
         currencyParamsHBox.getChildren().add(localHBox);
     }
 
+    private void InitCurrency() {
+        Map<String, CurrencyData> currenciesData = CurrencyFetcher.GetForDate(date.getValue());
+        Vector<String> currencyTitles = new Vector<>();
+        for(Map.Entry<String, CurrencyData> data : currenciesData.entrySet()) {
+            currencyTitles.add(data.getValue().charCode_ +" | " + data.getValue().name_);
+        }
+        Collections.sort(currencyTitles);
+        currency = new ComboBox<>();
+        currency.getItems().addAll(currencyTitles);
+        currency.setMaxWidth(200);
+        currency.setOnAction(_ -> DataChanged());
+        HBox.setHgrow(currency, Priority.ALWAYS);
+    }
+
     private void InitCommission() {
         HBox localHBox = new HBox();
-        localHBox.setAlignment(Pos.CENTER_RIGHT);
+        localHBox.setAlignment(Pos.CENTER_LEFT);
         localHBox.setSpacing(GlobalConstants.defaultSpacing * 2);
 
         Text label = new Text("Комиссия");
         label.getStyleClass().add(Styles.TITLE_4);
 
-        commission = new TextField();
+        commissionCount = new TextField();
+        TextFormatter<Double> formatter = new TextFormatter<>(new DoubleStringConverter(), 0.0);
+        commissionCount.setTextFormatter(formatter);
+        commissionCount.setOnAction(_ -> DataChanged());
+
         localHBox.getChildren().add(label);
-        localHBox.getChildren().add(commission);
+        localHBox.getChildren().add(commissionCount);
 
         currencyParamsHBox.getChildren().add(localHBox);
     }
@@ -116,6 +137,10 @@ public class OnlineCalculatorScene {
         label.getStyleClass().add(Styles.TITLE_4);
 
         currencyCount = new TextField();
+        TextFormatter<Double> formatter = new TextFormatter<>(new DoubleStringConverter(), 0.0);
+        currencyCount.setTextFormatter(formatter);
+        currencyCount.setOnAction(_ -> DataChanged());
+
         localHBox.getChildren().add(label);
         localHBox.getChildren().add(currencyCount);
 
@@ -124,6 +149,7 @@ public class OnlineCalculatorScene {
 
     private void InitCalendar() {
         date = MyCalendar.CreateCalendar(CompareTime.OnlyPast);
+        date.valueProperty().addListener((_, _, _) -> DataChanged());
         paramsHbox.getChildren().add(date);
     }
 
@@ -132,5 +158,99 @@ public class OnlineCalculatorScene {
     }
     public Node GetNode() {
         return vbox;
+    }
+
+    private void DataChanged() {
+        String code = currency.getValue();
+        if(!IsDataValid()) {
+            table.getItems().clear();
+            return;
+        }
+        if(code == null || code.isEmpty())
+            return;
+        RefillTable();
+    }
+
+    private void RefillTable() {
+        table.getItems().clear();
+
+        String code = currency.getValue().substring(0, 3);
+        Map<String, CurrencyData> currenciesData = CurrencyFetcher.GetForDate(date.getValue());
+
+        CurrencyData currentCurrency = null;
+        for(Map.Entry<String, CurrencyData> currency : currenciesData.entrySet()) {
+            if (Objects.equals(currency.getValue().charCode_, code)) {
+                currentCurrency = currency.getValue();
+                break;
+            }
+        }
+
+        if(currentCurrency == null)
+            return;
+
+        double count = 0.0;
+        double commission = 0.0;
+        try {
+            count = Double.parseDouble(currencyCount.getText());
+            commission = Double.parseDouble(commissionCount.getText());
+        } catch (Exception error) {
+            return;
+        }
+
+        for(Map.Entry<String, CurrencyData> currency : currenciesData.entrySet()) {
+            if(Objects.equals(currency.getValue().charCode_, code))
+                continue;
+
+            double relation = currentCurrency.valueRate_ / currency.getValue().valueRate_;
+            double rawAvailable = relation * count;
+            double available = (rawAvailable - (commission / 100) * rawAvailable);
+            double availableToBuy = available / currency.getValue().nominal_;
+
+            CurrencyRow row = new CurrencyRow(
+                currency.getValue().charCode_,
+                currency.getValue().name_,
+                currency.getValue().nominal_,
+                currency.getValue().value_,
+                currency.getValue().valueRate_,
+                available,
+                availableToBuy
+            );
+
+            table.getItems().add(row);
+        }
+    }
+
+    private boolean ValidateDouble(String value) {
+        try {
+            Double.parseDouble(value);
+            return true;
+        } catch (NumberFormatException error) {
+            return false;
+        }
+    }
+
+    private boolean ValidateField(TextField field, Double min, Double max) {
+        if(!ValidateDouble(field.getText())) {
+            field.pseudoClassStateChanged(Styles.STATE_DANGER, true);
+            return false;
+        }
+        else {
+            double value = Double.parseDouble(field.getText());
+            if(value >= min && value <= max) {
+                field.pseudoClassStateChanged(Styles.STATE_DANGER, false);
+            }
+            else {
+                field.pseudoClassStateChanged(Styles.STATE_DANGER, true);
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean IsDataValid() {
+        boolean flag = true;
+        flag = ValidateField(currencyCount, 0.0, Double.MAX_VALUE) && flag;
+        flag = ValidateField(commissionCount, 0.0, Double.MAX_VALUE) && flag;
+        return flag;
     }
 }

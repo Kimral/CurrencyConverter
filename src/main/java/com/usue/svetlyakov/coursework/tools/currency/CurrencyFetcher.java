@@ -11,31 +11,39 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
 
 public class CurrencyFetcher {
-    Map<Date, Vector<CurrencyData>> fetchedData;
+    static Map<LocalDate, Map<String, CurrencyData>> fetchedData = new HashMap<>();
 
-    public CurrencyFetcher() {
-        fetchedData = new HashMap<>();
-    }
 
-    private void FetchDataForDate(Date date) {
+    static private void FetchDataForDate(LocalDate date) {
         if(!fetchedData.containsKey(date))
             GetData(date);
     }
 
-    public Vector<CurrencyData> GetForDate(Date date) {
+    static public Map<String, CurrencyData> GetForDate(LocalDate date) {
         FetchDataForDate(date);
-        return fetchedData.get(date);
+        var result = fetchedData.get(date);
+        CurrencyData ruble = new CurrencyData(
+                0,
+                "RUB",
+                1,
+                "Российский рубль",
+                1,
+                1
+        );
+        result.put("R0000", ruble);
+        return result;
     }
 
-    private void GetData(Date date) {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        String dateString = formatter.format(date);
+    static private void GetData(LocalDate date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String dateString = date.format(formatter);
 
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -52,8 +60,8 @@ public class CurrencyFetcher {
         }
     }
 
-    private void AddCurrency(Date date, NodeList currencies) {
-        Vector<CurrencyData> dataForDate = new Vector<>();
+    static private void AddCurrency(LocalDate date, NodeList currencies) {
+        Map<String, CurrencyData> dataForDate = new HashMap<>();
         for (int i = 0; i < currencies.getLength(); i++) {
             Element element = (Element) currencies.item(i);
             String id = element.getAttribute("ID");
@@ -69,8 +77,8 @@ public class CurrencyFetcher {
             double valueRate = Double.parseDouble(valueRateStr);
 
             // Обработка каждого элемента, например, вывод его содержимого
-            CurrencyData currency = new CurrencyData(id, numCode, charCode, nominal, name, value, valueRate);
-            dataForDate.add(currency);
+            CurrencyData currency = new CurrencyData(numCode, charCode, nominal, name, value, valueRate);
+            dataForDate.put(id, currency);
         }
         fetchedData.put(date, dataForDate);
     }
