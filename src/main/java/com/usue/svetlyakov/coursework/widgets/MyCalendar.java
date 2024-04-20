@@ -19,8 +19,19 @@ class CustomDateCell extends DateCell {
         super.updateItem(date, empty);
         switch(timeFlag) {
             case None -> setDisable(empty);
-            case OnlyPast -> setDisable(empty || date.isAfter(ChronoLocalDate.from(ZonedDateTime.now())));
-            case OnlyFuture -> setDisable(empty || date.isBefore(ChronoLocalDate.from(ZonedDateTime.now())));
+            case OnlyPast -> {
+                LocalDate minDate = LocalDate.of(1992, 7, 1);
+                setDisable(empty ||
+                           date.isAfter(ChronoLocalDate.from(ZonedDateTime.now())) ||
+                           date.isBefore(ChronoLocalDate.from(minDate)));
+
+            }
+            case OnlyFuture -> {
+                LocalDate minDate = LocalDate.of(1992, 7, 1);
+                setDisable(empty ||
+                           date.isBefore(ChronoLocalDate.from(ZonedDateTime.now())) ||
+                           date.isBefore(minDate));
+            }
         }
     }
 }

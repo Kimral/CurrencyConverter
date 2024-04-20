@@ -38,7 +38,7 @@ public class CurrenciesTable {
         col6.setCellValueFactory(
             c -> {
                 double value = Math.floor(c.getValue().availableToBuy_);
-                return new SimpleStringProperty(String.valueOf(value));
+                return new SimpleStringProperty(String.valueOf((int) value));
             }
         );
 

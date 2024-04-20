@@ -123,8 +123,12 @@ public class OnlineCalculatorScene {
         commissionCount.setTextFormatter(formatter);
         commissionCount.setOnAction(_ -> DataChanged());
 
+        Text percent = new Text("%");
+        percent.getStyleClass().add(Styles.TITLE_4);
+
         localHBox.getChildren().add(label);
         localHBox.getChildren().add(commissionCount);
+        localHBox.getChildren().add(percent);
 
         currencyParamsHBox.getChildren().add(localHBox);
     }
@@ -251,7 +255,7 @@ public class OnlineCalculatorScene {
     private boolean IsDataValid() {
         boolean flag = true;
         flag = ValidateField(currencyCount, 0.0, Double.MAX_VALUE) && flag;
-        flag = ValidateField(commissionCount, 0.0, Double.MAX_VALUE) && flag;
+        flag = ValidateField(commissionCount, 0.0, 100.0) && flag;
         return flag;
     }
 }

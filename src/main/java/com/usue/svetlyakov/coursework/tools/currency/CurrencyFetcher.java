@@ -20,7 +20,6 @@ import java.util.Vector;
 public class CurrencyFetcher {
     static Map<LocalDate, Map<String, CurrencyData>> fetchedData = new HashMap<>();
 
-
     static private void FetchDataForDate(LocalDate date) {
         if(!fetchedData.containsKey(date))
             GetData(date);

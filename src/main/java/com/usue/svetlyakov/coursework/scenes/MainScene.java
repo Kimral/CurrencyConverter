@@ -6,7 +6,7 @@ import javafx.scene.layout.BorderPane;
 
 public class MainScene {
     private static final double min_window_width = 625;
-    private static final double min_window_height = 425;
+    private static final double min_window_height = 555;
     BorderPane pane;
     CenterScene centre;
     AppHeaderScene appHeader;
